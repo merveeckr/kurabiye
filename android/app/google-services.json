@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "711782088349",
+    "project_id": "cookie-70356",
+    "storage_bucket": "cookie-70356.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711782088349:android:b461add8f043cca4e7de74",
+        "android_client_info": {
+          "package_name": "com.example.kurabiye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711782088349-uui3othuooq0s4qh7mmp17u9sa7fs24d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHDo6tK0lOArksNoiGysZwWN3q37mVmos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711782088349-uui3othuooq0s4qh7mmp17u9sa7fs24d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

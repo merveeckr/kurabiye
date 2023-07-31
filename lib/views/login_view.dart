@@ -42,8 +42,8 @@ class _LoginViewState extends State<LoginView> {
           children: [
             Lottie.asset(
               'assets/moon.json',
-              width: 350, // Genişliği 200 yapabilirsiniz.
-              height: 350,
+              width: 250, // Genişliği 200 yapabilirsiniz.
+              height: 250,
             ),
             const SizedBox(height: 10),
             Center(

@@ -105,6 +105,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
             ),
+            const SizedBox(height: 30),
             TextButton(
               onPressed: () async {
                 await Firebase.initializeApp(
@@ -113,10 +114,12 @@ class _LoginViewState extends State<LoginView> {
                 final email = _email.text;
                 final password = _password.text;
                 try {
-                  final UserCredential = await FirebaseAuth.instance
-                      .signInWithEmailAndPassword(
-                          email: email, password: password);
-                  print(UserCredential);
+                  await FirebaseAuth.instance.signInWithEmailAndPassword(
+                    email: email,
+                    password: password,
+                  );
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/notes/', (route) => false);
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found') {
                     print('User not found');
@@ -125,14 +128,38 @@ class _LoginViewState extends State<LoginView> {
                   }
                 }
               },
-              child: const Text("login"),
+              style: TextButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 253, 249, 210),
+                // Metin rengi
+                //backgroundColor:
+                //Color.fromARGB(255, 229, 212, 236), // Buton rengi
+                minimumSize: const Size(200, 0), // Buton boyutu
+                shape: const StadiumBorder(
+                    side: BorderSide(
+                        color: Color.fromARGB(255, 253, 249, 210), width: 1)),
+              ),
+              child: const Text(
+                "Login",
+                style: TextStyle(
+                  color: Colors.grey, // Metin rengini kırmızı yap
+                  //fontSize: 20, // Metin boyutunu 20 yap
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil('/register/', (route) => false);
               },
-              child: const Text('Not registered yet? Register here!'),
+              child: const Text(
+                'Not registered yet? Register here!',
+                style: TextStyle(
+                  color: Colors.grey, // Metin rengini kırmızı yap
+                  //fontSize: 20, // Metin boyutunu 20 yap
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             const SizedBox(height: 500),
           ],

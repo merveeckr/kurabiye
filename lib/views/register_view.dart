@@ -42,8 +42,8 @@ class _RegisterViewState extends State<RegisterView> {
           children: [
             Lottie.asset(
               'assets/add.json',
-              width: 350, // Genişliği 200 yapabilirsiniz.
-              height: 350,
+              width: 250, // Genişliği 200 yapabilirsiniz.
+              height: 250,
             ),
 
             const SizedBox(height: 10),
@@ -126,14 +126,28 @@ class _RegisterViewState extends State<RegisterView> {
                   }
                 }
               },
-              child: const Text("register"),
+              child: const Text(
+                "Register",
+                style: TextStyle(
+                  //color: Colors.grey, // Metin rengini kırmızı yap
+                  //fontSize: 20, // Metin boyutunu 20 yap
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             TextButton(
                 onPressed: () {
                   Navigator.of(context)
                       .pushNamedAndRemoveUntil('/login/', (route) => false);
                 },
-                child: const Text('Already registered. Login here!')),
+                child: const Text(
+                  'Already registered. Login here!',
+                  style: TextStyle(
+                    //color: Colors.grey, // Metin rengini kırmızı yap
+                    //fontSize: 20, // Metin boyutunu 20 yap
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
             const SizedBox(height: 500),
           ],
         ),

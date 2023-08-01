@@ -5,6 +5,7 @@ import 'package:kurabiye/constants/routes.dart';
 import 'package:lottie/lottie.dart';
 
 import '../firebase_options.dart';
+import '../utulities/show_error_dialog.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -37,6 +38,7 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('login'),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -119,14 +121,32 @@ class _LoginViewState extends State<LoginView> {
                     email: email,
                     password: password,
                   );
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil(notesRoute, (route) => false);
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    notesRoute,
+                    (route) => false,
+                  );
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found') {
-                    print('User not found');
+                    await showErrorDialog(
+                      context,
+                      'User not found!',
+                    );
                   } else if (e.code == 'wrong-password') {
-                    print('Wrong password');
+                    await showErrorDialog(
+                      context,
+                      'Wrong credentials!',
+                    );
+                  } else {
+                    await showErrorDialog(
+                      context,
+                      'Error:${e.code}',
+                    );
                   }
+                } catch (e) {
+                  await showErrorDialog(
+                    context,
+                    e.toString(),
+                  );
                 }
               },
               style: TextButton.styleFrom(

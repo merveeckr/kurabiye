@@ -35,7 +35,14 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('login'),
+        title: const Text(
+          'cookie',
+          style: TextStyle(
+            color: Colors.grey, // Metin rengini kırmızı yap
+            //fontSize: 20, // Metin boyutunu 20 yap
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -68,10 +75,15 @@ class _LoginViewState extends State<LoginView> {
                     keyboardType: TextInputType.emailAddress,
                     enableSuggestions: false,
                     autocorrect: false,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       border: InputBorder.none,
-                      prefixIcon: Icon(Icons.person),
+                      prefixIcon: const Opacity(
+                        opacity: 0.7,
+                        child: Icon(Icons.person),
+                      ),
                       hintText: "enter your email here",
+                      hintStyle:
+                          TextStyle(color: Colors.black.withOpacity(0.4)),
                     ),
                   ),
                 ),
@@ -98,11 +110,15 @@ class _LoginViewState extends State<LoginView> {
                   obscureText: true,
                   enableSuggestions: false,
                   autocorrect: false,
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                    prefixIcon: Icon(Icons.key_rounded),
-                    hintText: "enter your password here",
-                  ),
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      prefixIcon: const Opacity(
+                        opacity: 0.7,
+                        child: Icon(Icons.key_rounded),
+                      ),
+                      hintText: "enter your password here",
+                      hintStyle:
+                          TextStyle(color: Colors.black.withOpacity(0.4))),
                 ),
               ),
             ),

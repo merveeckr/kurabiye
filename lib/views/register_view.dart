@@ -35,7 +35,15 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Register'),
+        title: const Text(
+          'cookie',
+          style: TextStyle(
+            color: Colors.grey, // Metin rengini kırmızı yap
+            //fontSize: 20, // Metin boyutunu 20 yap
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -5,7 +5,6 @@ import 'package:kurabiye/views/login_view.dart';
 import 'package:kurabiye/views/notes_view.dart';
 import 'package:kurabiye/views/register_view.dart';
 import 'package:kurabiye/views/verify_email.dart';
-//import 'dart:developer' as devtools show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized;
